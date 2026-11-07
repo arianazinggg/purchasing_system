@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materials Pricelist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <!-- Save your logo files next to index.html with these names -->
+  <img src="ikythx-logo.png" alt="IKYTHX">
+  <img src="made-logo.png" alt="MADE">
+</header>
+
+<main>
+  <button id="viewBtn" class="navybtn">View Materials Pricelist</button>
+  <hr>
+
+  <!-- ENTRY VIEW -->
+  <section id="entryView">
+    <div class="form">
+      <div class="f"><label for="type">Category</label>
+        <select id="type">
+          <option>Civil</option><option>Carpentry</option><option>Wall/Ceiling</option><option>Metal</option>
+          <option>Consumables</option><option>Paints/Plumbing</option><option>Tiles</option>
+        </select></div>
+      <div id="fields">
+        <div class="f"><label for="material">Item</label><input id="material"></div>
+        <div class="f"><label for="brand">Brand</label><input id="brand"></div>
+        <div class="f"><label for="unit">Unit</label><input id="unit"></div>
+        <div class="f"><label for="dimension">Dimension</label><input id="dimension"></div>
+        <div class="f"><label for="thickness">Thickness</label><input id="thickness"></div>
+        <div class="f"><label for="grade">Grade / Schedule</label><input id="grade"></div>
+        <div class="f"><label for="store">Store</label><input id="store"></div>
+        <div class="f"><label for="price">Price</label><input id="price" type="number" min="0" step="0.01"></div>
+      </div>
+    </div>
+    <p class="actions"><button id="add" class="navybtn">Save entry</button> <button id="cancelEdit" class="navybtn outline" hidden>Cancel</button> <span id="msg"></span></p>
+  </section>
+
+  <!-- PRICELIST VIEW -->
+  <section id="listView" hidden>
+    <div id="printHead"><h1>Materials Pricelist</h1><p id="printMeta"></p></div>
+    <div class="filters">
+      <input id="q" placeholder="SEARCH ITEM">
+      <select id="fCat"></select>
+      <select id="fStore"><option value="">STORE</option></select>
+    </div>
+    <div class="toolbar">
+      <button id="delBtn" class="navybtn outline">Delete</button>
+      <button id="editBtn" class="navybtn">Edit</button>
+    </div>
+    <div id="results" class="tablebox"></div>
+    <p id="listMsg" class="listmsg"></p>
+    <p class="printrow"><button id="printBtn" class="navybtn">Print PDF</button></p>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
